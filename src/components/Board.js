@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { Cell } from "./Cell";
+import { Cell, positionToString } from "./Cell";
 const BoardModel = require("../domain/Board");
-
-const positionToString = (pos) => `${pos.x}|${pos.y}`;
 
 export const Board = ({ board, clickAtCell }) => {
   return (

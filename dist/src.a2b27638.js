@@ -28429,11 +28429,17 @@ module.exports = Player;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Cell = void 0;
+exports.Cell = exports.positionToString = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var positionToString = function positionToString(pos) {
+  return "".concat(pos.x, "|").concat(pos.y);
+};
+
+exports.positionToString = positionToString;
 
 var Cell = function Cell() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
@@ -28448,9 +28454,9 @@ var Cell = function Cell() {
     className: "cell cell_".concat(position),
     "data-position": position,
     onClick: function onClick(e) {
-      return _onClick(e.target.dataset.position);
+      return _onClick(position);
     },
-    "data-testid": "cell_cell".concat(position)
+    "data-testid": "cell_".concat(position)
   }, owner);
 };
 
@@ -28473,10 +28479,6 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var BoardModel = require("../domain/Board");
 
-var positionToString = function positionToString(pos) {
-  return "".concat(pos.x, "|").concat(pos.y);
-};
-
 var Board = function Board(_ref) {
   var board = _ref.board,
       clickAtCell = _ref.clickAtCell;
@@ -28484,8 +28486,8 @@ var Board = function Board(_ref) {
     className: "board"
   }, BoardModel.positions().map(function (pos) {
     return /*#__PURE__*/_react.default.createElement(_Cell.Cell, {
-      key: positionToString(pos),
-      position: positionToString(pos),
+      key: (0, _Cell.positionToString)(pos),
+      position: (0, _Cell.positionToString)(pos),
       owner: BoardModel.at(pos, board),
       onClick: function onClick(pos) {
         return clickAtCell(pos);
