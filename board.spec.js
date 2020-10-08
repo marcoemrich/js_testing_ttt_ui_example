@@ -6,6 +6,20 @@ const Player = {
 };
 
 describe("Board", () => {
+  it("should export its cell positions", () => {
+    expect(Board.positions()).toEqual([
+      { x: 0, y: 0 },
+      { x: 1, y: 0 },
+      { x: 2, y: 0 },
+      { x: 0, y: 1 },
+      { x: 1, y: 1 },
+      { x: 2, y: 1 },
+      { x: 0, y: 2 },
+      { x: 1, y: 2 },
+      { x: 2, y: 2 },
+    ]);
+  });
+
   it("should mark an Player at position with mark", () => {
     const board = Board.create();
     const resultBoard = Board.mark(Player.X, { x: 0, y: 0 }, board);
