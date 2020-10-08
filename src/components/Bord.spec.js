@@ -3,8 +3,8 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import { render } from "@testing-library/react";
 
-import { Cell } from "./cell";
-import { Board } from "./board";
+import { Cell } from "./Cell";
+import { Board } from "./Board";
 import TicTacToe from "../model/tic_tac_toe";
 
 describe("Board", () => {

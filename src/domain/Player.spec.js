@@ -1,4 +1,4 @@
-const Player = require("./player");
+const Player = require("./Player");
 
 describe("Player.Opponent", () => {
   it("returns the opposite Player", () => {

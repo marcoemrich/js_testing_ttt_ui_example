@@ -1,4 +1,4 @@
-const Board = require("./board.js");
+const Board = require("./Board.js");
 
 const Player = {
   X: "X",
