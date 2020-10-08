@@ -40,12 +40,7 @@ Empty.args = {
 
 const ClickableTemplate = (args) => {
   const [owner, setOwner] = React.useState(" ");
-  return <Cell owner={owner} onClick={(e) => setOwner("X")} />;
+  return <Cell owner={owner} onClick={(e) => setOwner("X")} position="1|2" />;
 };
 
 export const Clickable = ClickableTemplate.bind({});
-Clickable.args = {
-  owner: "X",
-  position: "1|2",
-  onClick: (nr) => console.log(nr),
-};

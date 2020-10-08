@@ -31,7 +31,7 @@ export const Game = () => {
       <ul id="message-box">
         <li>Alice set X on 1/2</li>
         <li>Bob set O on 2/0</li>
-        <li>Alice won the game</li>
+        <li data-testid="win-message">Alice wins the game</li>
       </ul>
     </>
   );

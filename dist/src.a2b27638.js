@@ -28556,7 +28556,9 @@ var Game = function Game() {
     clickAtCell: clickAtCell
   }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("ul", {
     id: "message-box"
-  }, /*#__PURE__*/_react.default.createElement("li", null, "Alice set X on 1/2"), /*#__PURE__*/_react.default.createElement("li", null, "Bob set O on 2/0"), /*#__PURE__*/_react.default.createElement("li", null, "Alice won the game")));
+  }, /*#__PURE__*/_react.default.createElement("li", null, "Alice set X on 1/2"), /*#__PURE__*/_react.default.createElement("li", null, "Bob set O on 2/0"), /*#__PURE__*/_react.default.createElement("li", {
+    "data-testid": "win-message"
+  }, "Alice wins the game")));
 };
 
 exports.Game = Game;
