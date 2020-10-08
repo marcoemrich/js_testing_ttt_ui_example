@@ -1,0 +1,16 @@
+{
+  "name": "ttt-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^26.5.2",
+    "prettier": "^2.1.2"
+  }
+}

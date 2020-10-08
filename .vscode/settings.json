@@ -1,0 +1,15 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#E896F1",
+    "titleBar.activeBackground": "#F0B9F6",
+    "titleBar.activeForeground": "#2F0733"
+  },
+  "editor.formatOnSave": true,
+  "cSpell.enableFiletypes": ["!javascript"],
+  "[javascript]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.detectIndentation": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
