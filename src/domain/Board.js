@@ -1,8 +1,3 @@
-const Player = {
-  X: "X",
-  O: "O",
-};
-
 const cols = [0, 1, 2];
 const rows = cols;
 const rowsOrCols = cols;

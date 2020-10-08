@@ -18,5 +18,21 @@ export const Game = () => {
     setCurrentPlayer(PlayerModel.opponent(currentPlayer));
   };
 
-  return <Board board={board} clickAtCell={clickAtCell} />;
+  return (
+    <>
+      Player X: <input />
+      <br />
+      <br />
+      Player O: <input />
+      <br />
+      <br />
+      <Board board={board} clickAtCell={clickAtCell} />
+      <br />
+      <ul id="message-box">
+        <li>Alice set X on 1/2</li>
+        <li>Bob set O on 2/0</li>
+        <li>Alice won the game</li>
+      </ul>
+    </>
+  );
 };

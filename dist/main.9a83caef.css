@@ -18,5 +18,14 @@ button.cell + button.cell {
   font-size: 80px;
 }
 
+#message-box {
+  width: 200px;
+  border: 1px solid black;
+  width: 258px;
+  height: 200px;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
 
 /*# sourceMappingURL=/main.9a83caef.css.map */

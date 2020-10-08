@@ -28292,10 +28292,6 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-var Player = {
-  X: "X",
-  O: "O"
-};
 var cols = [0, 1, 2];
 var rows = cols;
 var rowsOrCols = cols;
@@ -28553,10 +28549,12 @@ var Game = function Game() {
     setCurrentPlayer(PlayerModel.opponent(currentPlayer));
   };
 
-  return /*#__PURE__*/_react.default.createElement(_Board.Board, {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "Player X: ", /*#__PURE__*/_react.default.createElement("input", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), "Player O: ", /*#__PURE__*/_react.default.createElement("input", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Board.Board, {
     board: board,
     clickAtCell: clickAtCell
-  });
+  }), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("ul", {
+    id: "message-box"
+  }, /*#__PURE__*/_react.default.createElement("li", null, "Alice set X on 1/2"), /*#__PURE__*/_react.default.createElement("li", null, "Bob set O on 2/0"), /*#__PURE__*/_react.default.createElement("li", null, "Alice won the game")));
 };
 
 exports.Game = Game;

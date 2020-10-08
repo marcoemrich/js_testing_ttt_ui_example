@@ -1,9 +1,5 @@
 const Board = require("./Board.js");
-
-const Player = {
-  X: "X",
-  O: "O",
-};
+const Player = require("./Player");
 
 describe("Board", () => {
   it("should export its cell positions", () => {
