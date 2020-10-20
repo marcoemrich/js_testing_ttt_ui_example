@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll",
+    "test:unit": "jest --watchAll",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "storybook": "start-storybook -p 6006",
@@ -40,7 +40,7 @@
       "./setup.js"
     ],
     "testMatch": [
-      "**/*.spec.js"
+      "**/src/**/*.spec.js"
     ]
   },
   "devDependencies": {
