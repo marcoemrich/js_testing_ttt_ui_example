@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 
-import { Board } from "./Board";
+import { Board, positionfromString } from "./Board";
 const BoardModel = require("../domain/Board");
 import "../main.css";
 
@@ -9,7 +9,17 @@ export default {
   component: Board,
 };
 
-const Template = (args) => <Board board={BoardModel.create()} {...args} />;
+export const Empty = () => <Board board={BoardModel.create()} />;
 
-export const Empty = Template.bind({});
-Empty.args = {};
+const ClickableTemplate = (args) => {
+  const [board, setBoard] = React.useState(BoardModel.create());
+
+  return (
+    <Board
+      board={board}
+      clickAtCell={(pos) => setBoard(BoardModel.mark("X", positionfromString(pos), board))}
+    />
+  );
+};
+
+export const ClickableBoardTest = ClickableTemplate.bind({});

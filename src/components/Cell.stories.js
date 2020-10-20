@@ -12,7 +12,6 @@ export default {
         options: ["X", "O", " "],
       },
     },
-    onClick: { action: "clicked" },
   },
 };
 
