@@ -8,9 +8,10 @@ export const Game = () => {
   const [board, setBoard] = React.useState(BoardModel.create());
   const [currentPlayer, setCurrentPlayer] = React.useState(PlayerModel.X);
   const [names, setNames] = React.useState({ X: "Bob", O: "Alice" });
+  const [messages, setMessages] = React.useState([]);
 
   const clickAtCell = (pos) => {
-    console.log(positionfromString(pos));
+    setMessages(messages.concat([names[currentPlayer] + " sets " + currentPlayer + " on " + pos]));
     setBoard(BoardModel.mark(currentPlayer, positionfromString(pos), board));
     setCurrentPlayer(PlayerModel.opponent(currentPlayer));
   };
@@ -32,9 +33,9 @@ export const Game = () => {
       <Board board={board} clickAtCell={clickAtCell} />
       <br />
       <ul id="message-box">
-        <li>Alice set X on 1/2</li>
-        <li>Bob set O on 2/0</li>
-        <li data-testid="win-message">Alice wins the game</li>
+        {messages.map((m, i) => (
+          <li key={i}>{m}</li>
+        ))}
       </ul>
     </>
   );
