@@ -3,6 +3,7 @@ const BoardModel = require("../domain/Board");
 const PlayerModel = require("../domain/Player");
 import { Board, positionfromString } from "./Board";
 import { Player } from "./Player";
+import { MessageBox } from "./MessageBox";
 
 export const Game = () => {
   const [board, setBoard] = React.useState(BoardModel.create());
@@ -10,13 +11,19 @@ export const Game = () => {
   const [names, setNames] = React.useState({ X: "Bob", O: "Alice" });
   const [messages, setMessages] = React.useState([]);
 
+  const winner = () => BoardModel.winner(board);
+
   const clickAtCell = (pos) => {
     setMessages(messages.concat([names[currentPlayer] + " sets " + currentPlayer + " on " + pos]));
     setBoard(BoardModel.mark(currentPlayer, positionfromString(pos), board));
     setCurrentPlayer(PlayerModel.opponent(currentPlayer));
   };
 
-  return (
+  return winner() ? (
+    <h1>
+      {names[winner()]} wins the Game with {winner()}
+    </h1>
+  ) : (
     <>
       <Player
         label="Player X"
@@ -32,11 +39,7 @@ export const Game = () => {
       <br />
       <Board board={board} clickAtCell={clickAtCell} />
       <br />
-      <ul id="message-box">
-        {messages.map((m, i) => (
-          <li key={i}>{m}</li>
-        ))}
-      </ul>
+      <MessageBox messages={messages} />
     </>
   );
 };
