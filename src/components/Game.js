@@ -20,8 +20,8 @@ export const Game = () => {
   };
 
   return winner() ? (
-    <h1>
-      {names[winner()]} wins the Game with {winner()}
+    <h1 data-testid="win-message">
+      {names[winner()]} wins the game with {winner()}
     </h1>
   ) : (
     <>
