@@ -1,6 +1,6 @@
 import React from "react";
-const BoardModel = require("../domain/Board");
-const PlayerModel = require("../domain/Player");
+import * as BoardModel from "../domain/Board";
+import * as PlayerModel from "../domain/Player";
 import { Board, positionfromString } from "./Board";
 import { Player } from "./Player";
 import { MessageBox } from "./MessageBox";

@@ -6,9 +6,9 @@ const winnerOfTwoCells = (symbol1, symbol2) => (symbol1 === symbol2 ? symbol1 : 
 
 const or = (a, b) => a || b;
 
-const create = () => ({});
-const mark = (player, pos, board) => ({ ...board, [posToString(pos)]: player });
-const at = (pos, board) => board[posToString(pos)];
+export const create = () => ({});
+export const mark = (player, pos, board) => ({ ...board, [posToString(pos)]: player });
+export const at = (pos, board) => board[posToString(pos)];
 
 const winByDiag1 = (board) =>
   rows.map((xy) => at({ x: xy, y: xy }, board)).reduce(winnerOfTwoCells);
@@ -25,12 +25,12 @@ const winByCol = (board) => winByRowOrCol(winByColX, board);
 const winByRowOrCol = (winByRowOrColXY, board) =>
   rowsOrCols.map((xOrY) => winByRowOrColXY(xOrY, board)).reduce(or);
 
-const winner = (board) =>
+export const winner = (board) =>
   [winByRow, winByCol, winByDiag1, winByDiag2]
     .map((winCondition) => winCondition(board))
     .reduce(or);
 
-const positions = () => [
+export const positions = () => [
   { x: 0, y: 0 },
   { x: 1, y: 0 },
   { x: 2, y: 0 },
@@ -41,5 +41,3 @@ const positions = () => [
   { x: 1, y: 2 },
   { x: 2, y: 2 },
 ];
-
-module.exports = { create, mark, at, winner, positions };

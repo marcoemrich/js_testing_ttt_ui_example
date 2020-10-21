@@ -1,5 +1,5 @@
-const Board = require("./Board.js");
-const Player = require("./Player");
+import * as Board from "./Board";
+import * as Player from "./Player";
 
 describe("Board", () => {
   it("should export its cell positions", () => {

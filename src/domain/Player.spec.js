@@ -1,4 +1,4 @@
-const Player = require("./Player");
+import { Player } from "./Player";
 
 describe("Player.Opponent", () => {
   it("returns the opposite Player", () => {
