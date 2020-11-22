@@ -1,27 +1,27 @@
 import * as R from "ramda";
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { render, screen, prettyDOM, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
 import { Cell } from "./Cell";
 
 describe("Cell", () => {
   it("should render with a button with owner", () => {
-    const wrapper = mount(<Cell owner="X" position={{ x: 1, y: 0 }} />);
-    // console.log(wrapper.debug());
-    expect(wrapper.find("button").text()).toEqual("X");
+    const { container } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
+    // console.log(JSON.stringify(container.firstChild.textContent));
+    expect(container.firstChild.textContent).toEqual("X");
   });
 
   it("should render with a button the given position", () => {
-    const wrapper = mount(<Cell position={{ x: 1, y: 0 }} />);
-
-    expect(wrapper.find("button").prop("data-position")).toEqual({ x: 1, y: 0 });
+    const { container } = render(<Cell position={{ x: 1, y: 0 }} />);
+    expect(container.firstChild.dataset.position).toEqual("1|0");
   });
 
   it("should call onClick handler", () => {
     const handler = jest.fn();
     // show error with shallow
-    const wrapper = mount(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
-    wrapper.find("button").simulate("click");
+    const { container } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
+    fireEvent.click(container.firstChild);
     expect(handler).toBeCalledWith({ x: 1, y: 0 });
   });
 });

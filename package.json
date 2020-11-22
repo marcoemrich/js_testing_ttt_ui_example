@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:unit": "jest --watchAll",
+    "test:unit": "jest --watchAll --verbose",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "storybook": "start-storybook -p 6006",
