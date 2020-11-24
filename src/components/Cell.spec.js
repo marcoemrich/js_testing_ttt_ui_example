@@ -5,7 +5,7 @@ import "@testing-library/jest-dom/extend-expect";
 
 import { Cell } from "./Cell";
 
-describe("Cell", () => {
+describe("Cell (UI)", () => {
   it("should render with a button with owner", () => {
     const { container } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
     // console.log(JSON.stringify(container.firstChild.textContent));

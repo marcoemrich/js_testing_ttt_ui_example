@@ -12,7 +12,7 @@ export const Board = ({ board, clickAtCell }) => (
     {BoardModel.positions().map((pos) => (
       <Cell
         key={positionToString(pos)}
-        position={positionToString(pos)}
+        position={pos}
         owner={BoardModel.at(pos, board)}
         onClick={(pos) => clickAtCell(pos)}
       />
