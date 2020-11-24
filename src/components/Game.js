@@ -1,7 +1,8 @@
 import React from "react";
 import * as BoardModel from "../domain/Board";
-import * as PlayerModel from "../domain/Player";
-import { Board, positionfromString } from "./Board";
+import { Player as PlayerModel } from "../domain/Player";
+import { Board } from "./Board";
+import { positionToString } from "./Cell";
 import { Player } from "./Player";
 import { MessageBox } from "./MessageBox";
 
@@ -14,8 +15,12 @@ export const Game = () => {
   const winner = () => BoardModel.winner(board);
 
   const clickAtCell = (pos) => {
-    setMessages(messages.concat([names[currentPlayer] + " sets " + currentPlayer + " on " + pos]));
-    setBoard(BoardModel.mark(currentPlayer, positionfromString(pos), board));
+    setMessages(
+      messages.concat([
+        names[currentPlayer] + " sets " + currentPlayer + " on " + positionToString(pos),
+      ])
+    );
+    setBoard(BoardModel.mark(currentPlayer, pos, board));
     setCurrentPlayer(PlayerModel.opponent(currentPlayer));
   };
 

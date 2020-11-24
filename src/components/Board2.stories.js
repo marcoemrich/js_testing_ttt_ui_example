@@ -14,12 +14,7 @@ export const Empty = () => <Board board={BoardModel.create()} />;
 const ClickableTemplate = (args) => {
   const [board, setBoard] = React.useState(BoardModel.create());
 
-  return (
-    <Board
-      board={board}
-      clickAtCell={(pos) => setBoard(BoardModel.mark("X", positionfromString(pos), board))}
-    />
-  );
+  return <Board board={board} clickAtCell={(pos) => setBoard(BoardModel.mark("X", pos, board))} />;
 };
 
 export const ClickableBoardTest = ClickableTemplate.bind({});
