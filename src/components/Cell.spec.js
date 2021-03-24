@@ -7,7 +7,8 @@ import { Cell } from "./Cell";
 
 describe("Cell (UI)", () => {
   it("should render with a button with owner", () => {
-    const { container } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
+    const { container, debug } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
+    // debug();
     // console.log(JSON.stringify(container.firstChild.textContent));
     expect(container.firstChild.textContent).toEqual("X");
   });
