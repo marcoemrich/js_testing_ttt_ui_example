@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { Cell, positionToString } from "./Cell";
+import React from "react";
 import * as BoardModel from "../domain/Board";
+import { Cell, positionToString } from "./Cell";
 
 export const positionfromString = (str) => ({
   x: str.split("|")[0],
