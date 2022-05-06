@@ -6,6 +6,7 @@ context("Tic Tac Toe", () => {
   });
 
   it("should change the board", () => {
+    // cy.get("[data-testid='player").first().clear().type("MARCO");
     cy.wait(200);
     cy.get("[data-testid='cell_1|1']").click();
     cy.wait(200);
