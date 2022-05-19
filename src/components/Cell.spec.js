@@ -1,6 +1,5 @@
-import * as R from "ramda";
 import React from "react";
-import { render, screen, prettyDOM, fireEvent } from "@testing-library/react";
+import { render, prettyDOM, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import { Cell } from "./Cell";
