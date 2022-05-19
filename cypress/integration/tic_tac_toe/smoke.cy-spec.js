@@ -16,6 +16,8 @@ context("Tic Tac Toe", () => {
     cy.wait(200);
     cy.get("[data-testid='cell_2|2']").click();
     cy.wait(200);
+    // cy.screenshot();
+    // cy.log("foobar");
     cy.get("[data-testid='cell_0|1']").click();
     cy.get("[data-testid=win-message]").contains("Bob wins the game with X");
   });

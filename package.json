@@ -6,6 +6,7 @@
   "scripts": {
     "test:unit": "jest --watchAll --verbose",
     "test:e2e": "start-server-and-test start 1234 cy:run",
+    "test:cy-storybook": "start-server-and-test storybook 6006 cy:run",
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "storybook": "start-storybook -p 6006",
