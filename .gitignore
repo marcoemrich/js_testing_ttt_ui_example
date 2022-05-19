@@ -4,3 +4,4 @@ dist
 videos
 screenshots
 coverage
+.parcel-cache

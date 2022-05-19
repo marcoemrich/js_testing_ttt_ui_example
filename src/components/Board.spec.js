@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import React from "react";
 import { fireEvent, render, screen, container, prettyDOM } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
