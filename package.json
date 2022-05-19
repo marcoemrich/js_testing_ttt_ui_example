@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:unit": "jest --watchAll --verbose",
+    "test:unit": "jest --verbose",
+    "test:unit:watch": "jest --watchAll --verbose",
     "test:e2e": "start-server-and-test start 1234 cy:run",
     "test:cy-storybook": "start-server-and-test storybook 6006 cy:run",
     "start": "parcel index.html",
@@ -23,11 +24,10 @@
     "@babel/preset-react": "^7.10.4",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^14.2.0",
     "core-js": "^3.6.5",
     "cypress": "^9.6.0",
     "domain": "0.0.1",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
     "jest": "^26.5.2",
     "parcel-bundler": "^1.12.4",
     "prettier": "^2.1.2",
@@ -38,9 +38,6 @@
     "storybook": "^6.0.26"
   },
   "jest": {
-    "setupFilesAfterEnv": [
-      "./setup.js"
-    ],
     "testMatch": [
       "**/src/**/*.spec.js"
     ]
