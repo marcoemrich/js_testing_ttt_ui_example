@@ -19,6 +19,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.17.12",
+    "@babel/preset-react": "^7.17.12",
     "ramda": "^0.28.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"

@@ -3,7 +3,7 @@
  */
 
 import React from "react";
-import { render, prettyDOM, fireEvent } from "@testing-library/react";
+import { render, prettyDOM, fireEvent, screen } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import { Cell } from "./Cell";
@@ -27,5 +27,30 @@ describe("Cell (UI)", () => {
     const { container } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
     fireEvent.click(container.firstChild);
     expect(handler).toBeCalledWith({ x: 1, y: 0 });
+  });
+
+  it("should call onClick handler (getByTestId)", () => {
+    const handler = jest.fn();
+
+    const { getByTestId } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
+
+    const cell = getByTestId("cell_1|0");
+
+    fireEvent.click(cell);
+
+    expect(handler).toBeCalledTimes(1);
+    expect(handler).toBeCalledWith({ x: 1, y: 0 });
+  });
+
+  it("should not find wrong cell", () => {
+    const handler = jest.fn();
+
+    const { container, queryByTestId } = render(
+      <Cell onClick={handler} position={{ x: 1, y: 1 }} />
+    );
+
+    const cell = queryByTestId("cell_1|2");
+
+    expect(cell).not.toBeInTheDocument();
   });
 });

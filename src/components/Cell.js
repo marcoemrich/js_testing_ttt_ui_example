@@ -2,6 +2,7 @@ import React from "react";
 
 export const positionToString = (pos) => `${pos.x}|${pos.y}`;
 
+// Presentational Components
 export const Cell = ({ owner = "", position, onClick }) => (
   <button
     role="cell"
