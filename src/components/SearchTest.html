@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" >
+      import React from "react";
+      import ReactDOM from "react-dom";
+      import React from "react";
+      import { Search } from "./Search";
+
+      const getData = () => [1, 2, 3, 4];
+
+      export const SearchCompTest = () => (
+        <>
+          <h1>Search Component</h1>
+          <Search getData={getData} />
+        </>
+      );
+
+      const App = document.getElementById("app");
+
+      ReactDOM.render(<SearchCompTest />, App);
+
+    </script>
+  </body>
+</html>

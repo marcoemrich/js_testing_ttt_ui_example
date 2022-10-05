@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Game } from "./components/Game";
+import { Main } from "./components/Main";
 
 const App = document.getElementById("app");
 
-ReactDOM.render(<Game />, App);
+ReactDOM.render(<Main />, App);
