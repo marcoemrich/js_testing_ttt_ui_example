@@ -6,6 +6,6 @@ context("Tic Tac Toe", () => {
   });
 
   it("has headline", () => {
-    cy.get("[data-testid='headline']").should("contain", "Star Wars");
+    cy.get("[data-testid='headline']").should("contain", "My Search Component");
   });
 });
