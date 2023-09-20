@@ -3,10 +3,13 @@
  */
 
 import React from "react";
-import { render, prettyDOM, fireEvent, screen } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import { render, prettyDOM, fireEvent, screen, cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { describe, it, expect, afterEach, vi } from "vitest";
 
 import { Cell } from "./Cell";
+
+afterEach(cleanup);
 
 describe("Cell (UI)", () => {
   it("should render with a button with owner", () => {
@@ -22,7 +25,7 @@ describe("Cell (UI)", () => {
   });
 
   it("should call onClick handler", () => {
-    const handler = jest.fn();
+    const handler = vi.fn();
     // show error with shallow
     const { container } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
     fireEvent.click(container.firstChild);
@@ -30,7 +33,7 @@ describe("Cell (UI)", () => {
   });
 
   it("should call onClick handler (getByTestId)", () => {
-    const handler = jest.fn();
+    const handler = vi.fn();
 
     const { getByTestId } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
 
@@ -43,7 +46,7 @@ describe("Cell (UI)", () => {
   });
 
   it("should not find wrong cell", () => {
-    const handler = jest.fn();
+    const handler = vi.fn();
 
     const { container, queryByTestId } = render(
       <Cell onClick={handler} position={{ x: 1, y: 1 }} />

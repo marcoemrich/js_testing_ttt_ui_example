@@ -1,5 +1,5 @@
 import React from "react";
-import * as BoardModel from "../domain/Board";
+import * as BoardModel from "../domain/Board.js";
 import { Player as PlayerModel } from "../domain/Player";
 import { Board } from "./Board";
 import { positionToString } from "./Cell";

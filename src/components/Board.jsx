@@ -1,5 +1,5 @@
 import React from "react";
-import * as BoardModel from "../domain/Board";
+import * as BoardModel from "../domain/Board.js";
 import { Cell, positionToString } from "./Cell";
 
 export const positionfromString = (str) => ({

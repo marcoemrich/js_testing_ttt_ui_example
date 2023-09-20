@@ -1,11 +1,8 @@
 /// <reference types="cypress" />
 
-context("Tic Tac Toe", () => {
-  beforeEach(() => {
-    cy.visit("localhost:1234");
-  });
-
+describe("Tic Tac Toe", () => {
   it("should change the board", () => {
+    cy.visit("localhost:1234");
     // cy.get("[data-testid='player").first().clear().type("MARCO");
     cy.wait(200);
     cy.get("[data-testid='cell_1|1']").click();

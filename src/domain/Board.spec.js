@@ -1,5 +1,6 @@
-import * as Board from "./Board";
-import * as Player from "./Player";
+import * as Board from "./Board.js";
+import * as Player from "./Player.js";
+import { describe, it, expect, test } from "vitest";
 
 describe("Board", () => {
   it("should export its cell positions", () => {

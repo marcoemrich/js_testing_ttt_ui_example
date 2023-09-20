@@ -3,12 +3,15 @@
  */
 
 import React from "react";
-import { fireEvent, render, screen, container, prettyDOM } from "@testing-library/react";
-import "@testing-library/jest-dom/extend-expect";
+import { fireEvent, render, screen, container, prettyDOM, cleanup } from "@testing-library/react";
+import "@testing-library/jest-dom/vitest";
+import { describe, it, expect, afterEach } from "vitest";
 
 import * as BoardModel from "../domain/Board";
 import { Player } from "../domain/Player";
 import { Board } from "./Board";
+
+afterEach(cleanup);
 
 describe("Board (UI)", () => {
   it("should have the right number of cells", () => {
@@ -29,6 +32,7 @@ describe("Board (UI)", () => {
 
   it("should show marks of Players (react-testing-library)", () => {
     const board = BoardModel.mark(Player.X, { x: 2, y: 2 }, BoardModel.create());
+
     const { getByTestId, debug } = render(<Board board={board} />);
     // debug();
     expect(getByTestId("cell_2|2")).toHaveTextContent("X");
