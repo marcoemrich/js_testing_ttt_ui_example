@@ -2,6 +2,7 @@
   "name": "ttt-example",
   "version": "1.0.0",
   "description": "Tic Tac Toe – Showcase für JS-Testing mit Vitest, Storybook und Cypress",
+  "type": "module",
   "scripts": {
     "start": "vite",
     "build": "vite build",
