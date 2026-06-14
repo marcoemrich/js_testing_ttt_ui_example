@@ -18,12 +18,14 @@ export default {
 const Template = (args) => <Cell {...args} />;
 
 export const X = Template.bind({});
+
 X.args = {
   owner: "X",
   position: { x: 1, y: 2 },
   onClick: (nr) => console.log(nr),
 };
 export const O = Template.bind({});
+
 O.args = {
   owner: "O",
   position: { x: 1, y: 2 },
