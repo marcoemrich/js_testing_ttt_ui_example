@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render, screen, container, prettyDOM, cleanup } from "@testing-library/react";
+import { fireEvent, render, screen, prettyDOM, cleanup } from "@testing-library/react";
 import { describe, it, expect, afterEach } from "vitest";
 
 import * as BoardModel from "../domain/Board";

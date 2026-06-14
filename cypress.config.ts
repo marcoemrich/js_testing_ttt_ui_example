@@ -6,10 +6,10 @@ export default defineConfig({
     // nach: es laufen nur die echten Tests (smoke + Board + Cell), die Cypress-
     // Default-Beispiele (*.spec.js) bleiben außen vor.
     specPattern: [
-      "cypress/integration/**/*.cy-spec.js",
-      "src/**/*.cy-spec.js",
+      "cypress/integration/**/*.cy-spec.{js,ts}",
+      "src/**/*.cy-spec.{js,ts}",
     ],
-    supportFile: "cypress/support/e2e.js",
+    supportFile: "cypress/support/e2e.ts",
     setupNodeEvents(on, config) {
       return config;
     },

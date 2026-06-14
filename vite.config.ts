@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react";
 
 // Eine Config für App-Build (Vite) und Unit-Tests (Vitest).
@@ -10,6 +10,6 @@ export default defineConfig({
   },
   test: {
     environment: "jsdom",
-    setupFiles: ["./vitest.setup.js"],
+    setupFiles: ["./vitest.setup.ts"],
   },
 });

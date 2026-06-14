@@ -1,3 +1,4 @@
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { expect, fn, userEvent, within } from "storybook/test";
 import { Button } from "./Button";
 import "./button.css";
@@ -15,20 +16,22 @@ const meta = {
     primary: { control: "boolean" },
     label: { control: "text" },
   },
-};
+} satisfies Meta<typeof Button>;
 
 export default meta;
 
-export const Primary = {
+type Story = StoryObj<typeof meta>;
+
+export const Primary: Story = {
   args: { primary: true, label: "Primär" },
 };
 
-export const Secondary = {
+export const Secondary: Story = {
   args: { primary: false, label: "Sekundär" },
 };
 
 // Interaction-Test: klickt den Button und prüft, dass onClick aufgerufen wird.
-export const ClickInteraction = {
+export const ClickInteraction: Story = {
   args: { label: "Test mich" },
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);

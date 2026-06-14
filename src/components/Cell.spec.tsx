@@ -9,18 +9,18 @@ afterEach(cleanup);
 describe("Cell (UI)", () => {
   it("should render with a button with owner", () => {
     const { container } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
-    expect(container.firstChild.textContent).toEqual("X");
+    expect((container.firstChild as HTMLElement).textContent).toEqual("X");
   });
 
   it("should render with a button the given position", () => {
     const { container } = render(<Cell position={{ x: 1, y: 0 }} />);
-    expect(container.firstChild.dataset.position).toEqual("1|0");
+    expect((container.firstChild as HTMLElement).dataset.position).toEqual("1|0");
   });
 
   it("should call onClick handler", () => {
     const handler = vi.fn();
     const { container } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
-    fireEvent.click(container.firstChild);
+    fireEvent.click(container.firstChild as HTMLElement);
     expect(handler).toBeCalledWith({ x: 1, y: 0 });
   });
 

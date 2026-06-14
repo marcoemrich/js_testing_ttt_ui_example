@@ -1,4 +1,4 @@
-import { Player } from "./Player.js";
+import { Player } from "./Player";
 import { describe, it, expect } from "vitest";
 
 describe("Player.Opponent", () => {

@@ -1,5 +1,6 @@
-/** @type { import('@storybook/react-vite').StorybookConfig } */
-const config = {
+import type { StorybookConfig } from "@storybook/react-vite";
+
+const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   // In Storybook 9/10 sind die früheren "essentials" (Controls, Actions,
   // Viewport, ...) und Interactions im Core integriert. addon-docs liefert die

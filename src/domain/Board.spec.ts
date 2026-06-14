@@ -1,5 +1,5 @@
-import * as Board from "./Board.js";
-import * as Player from "./Player.js";
+import * as Board from "./Board";
+import { Player } from "./Player";
 import { describe, it, expect, test } from "vitest";
 
 describe("Board", () => {

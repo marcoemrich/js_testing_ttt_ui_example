@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    // Tests enthalten bewusst ungenutzte Imports/Parameter (Demo-Charakter),
+    // daher hier nicht aktiviert.
+    "noUnusedLocals": false,
+    "noUnusedParameters": false
+  },
+  "include": ["src", "cypress", "*.config.ts", ".storybook", "vitest.setup.ts"]
+}

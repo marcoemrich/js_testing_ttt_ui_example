@@ -1,5 +1,6 @@
 import React from "react";
-import * as BoardModel from "../domain/Board.js";
+import * as BoardModel from "../domain/Board";
+import type { Position } from "../domain/Board";
 import { Player as PlayerModel } from "../domain/Player";
 import { Board } from "./Board";
 import { positionToString } from "./Cell";
@@ -10,11 +11,11 @@ export const Game = () => {
   const [board, setBoard] = React.useState(BoardModel.create());
   const [currentPlayer, setCurrentPlayer] = React.useState(PlayerModel.X);
   const [names, setNames] = React.useState({ X: "Bob", O: "Alice" });
-  const [messages, setMessages] = React.useState([]);
+  const [messages, setMessages] = React.useState<string[]>([]);
 
   const winner = () => BoardModel.winner(board);
 
-  const clickAtCell = (pos) => {
+  const clickAtCell = (pos: Position) => {
     setMessages(
       messages.concat([
         names[currentPlayer] + " sets " + currentPlayer + " on " + positionToString(pos),
@@ -24,9 +25,11 @@ export const Game = () => {
     setCurrentPlayer(PlayerModel.opponent(currentPlayer));
   };
 
-  return winner() ? (
+  const theWinner = winner();
+
+  return theWinner ? (
     <h1 data-testid="win-message">
-      {names[winner()]} wins the game with {winner()}
+      {names[theWinner]} wins the game with {theWinner}
     </h1>
   ) : (
     <>
