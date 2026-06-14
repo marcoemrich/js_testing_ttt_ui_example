@@ -17,5 +17,5 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },
-  "include": ["src", "cypress", "*.config.ts", ".storybook", "vitest.setup.ts"]
+  "include": ["src", "e2e", "*.config.ts", ".storybook", "vitest.setup.ts"]
 }
