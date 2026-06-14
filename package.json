@@ -1,7 +1,7 @@
 {
   "name": "ttt-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tic Tac Toe – Showcase für JS-Testing mit Vitest, Storybook und Cypress",
   "scripts": {
     "start": "vite",
     "build": "vite build",
@@ -16,7 +16,7 @@
     "cy:run": "cypress run"
   },
   "keywords": [],
-  "author": "",
+  "author": "Marco Emrich",
   "license": "ISC",
   "engines": {
     "node": ">=20"
@@ -33,7 +33,7 @@
     "@testing-library/react": "^14.0.0",
     "@vitejs/plugin-react": "^4.3.4",
     "cypress": "^15.17.0",
-    "prettier": "^2.6.2",
+    "prettier": "^3.8.4",
     "react-is": "^18.1.0",
     "start-server-and-test": "^1.14.0",
     "storybook": "^10.4.4",
