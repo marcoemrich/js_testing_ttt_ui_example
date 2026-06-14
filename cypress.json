@@ -1,4 +1,0 @@
-{
-  "integrationFolder": "../",
-  "testFiles": "**/*.cy-spec.js"
-}

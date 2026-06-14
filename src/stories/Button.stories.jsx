@@ -1,40 +1,39 @@
-import React from 'react';
+import { expect, fn, userEvent, within } from "storybook/test";
+import { Button } from "./Button";
+import "./button.css";
 
-import { Button } from './Button';
-
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: 'Example/Button',
+// Moderne CSF3-Demo. Zeigt Stories, Controls (args/argTypes) und einen
+// Interaction-Test via play() – passend zum Testing-Workshop.
+const meta = {
+  title: "Demo/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  args: {
+    label: "Klick mich",
+    onClick: fn(),
+  },
   argTypes: {
-    backgroundColor: { control: 'color' },
+    primary: { control: "boolean" },
+    label: { control: "text" },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template = (args) => <Button {...args} />;
+export default meta;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+export const Primary = {
+  args: { primary: true, label: "Primär" },
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
+export const Secondary = {
+  args: { primary: false, label: "Sekundär" },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+// Interaction-Test: klickt den Button und prüft, dass onClick aufgerufen wird.
+export const ClickInteraction = {
+  args: { label: "Test mich" },
+  play: async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Test mich" });
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalledOnce();
+  },
 };

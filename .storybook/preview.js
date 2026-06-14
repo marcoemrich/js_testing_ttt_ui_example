@@ -1,4 +1,6 @@
+/** @type { import('@storybook/react-vite').Preview } */
+const preview = {
+  parameters: {},
+};
 
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-}
+export default preview;

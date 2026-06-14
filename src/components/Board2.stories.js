@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import { Board, positionfromString } from "./Board";
-const BoardModel = require("../domain/Board");
+import * as BoardModel from "../domain/Board.js";
 import "../main.css";
 
 export default {
