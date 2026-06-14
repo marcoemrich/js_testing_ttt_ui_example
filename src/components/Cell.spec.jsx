@@ -1,10 +1,5 @@
-/**
- * @jest-environment jsdom
- */
-
 import React from "react";
 import { render, prettyDOM, fireEvent, screen, cleanup } from "@testing-library/react";
-import "@testing-library/jest-dom/vitest";
 import { describe, it, expect, afterEach, vi } from "vitest";
 
 import { Cell } from "./Cell";
@@ -13,9 +8,7 @@ afterEach(cleanup);
 
 describe("Cell (UI)", () => {
   it("should render with a button with owner", () => {
-    const { container, debug } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
-    // debug();
-    // console.log(JSON.stringify(container.firstChild.outerHTML));
+    const { container } = render(<Cell owner="X" position={{ x: 1, y: 0 }} />);
     expect(container.firstChild.textContent).toEqual("X");
   });
 
@@ -26,7 +19,6 @@ describe("Cell (UI)", () => {
 
   it("should call onClick handler", () => {
     const handler = vi.fn();
-    // show error with shallow
     const { container } = render(<Cell onClick={handler} position={{ x: 1, y: 0 }} />);
     fireEvent.click(container.firstChild);
     expect(handler).toBeCalledWith({ x: 1, y: 0 });
