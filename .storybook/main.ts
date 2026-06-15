@@ -2,9 +2,9 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
-  // In Storybook 9/10 sind die früheren "essentials" (Controls, Actions,
-  // Viewport, ...) und Interactions im Core integriert. addon-docs liefert die
-  // Docs-Tabs, addon-links die Story-Verlinkung.
+  // In Storybook 9/10 the former "essentials" (Controls, Actions,
+  // Viewport, ...) and Interactions are integrated into the core. addon-docs
+  // provides the Docs tabs, addon-links the story linking.
   addons: ["@storybook/addon-links", "@storybook/addon-docs"],
   framework: {
     name: "@storybook/react-vite",

@@ -1,10 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
 
-// Ersetzt die alte cypress.config.ts.
-// - Projekt "app": E2E gegen die laufende Vite-App (Port 1234)
-// - Projekt "storybook": Komponenten-Tests gegen die Storybook-iframe (Port 6006)
-// Beide Dev-Server werden über `webServer` automatisch gestartet
-// (ersetzt start-server-and-test).
+// Replaces the old cypress.config.ts.
+// - Project "app": E2E against the running Vite app (port 1234)
+// - Project "storybook": component tests against the Storybook iframe (port 6006)
+// Both dev servers are started automatically via `webServer`
+// (replaces start-server-and-test).
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,

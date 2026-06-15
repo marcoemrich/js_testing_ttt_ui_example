@@ -6,7 +6,7 @@ type ButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
-// Kleine Demo-Komponente für Storybook (ersetzt die alte SB-Default-Boilerplate).
+// Small demo component for Storybook (replaces the old SB default boilerplate).
 export const Button = ({ primary = false, label, onClick }: ButtonProps) => {
   const mode = primary ? "demo-btn--primary" : "demo-btn--secondary";
   return (

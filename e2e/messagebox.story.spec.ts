@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-// Läuft gegen die Storybook-iframe (baseURL: http://localhost:6006).
+// Runs against the Storybook iframe (baseURL: http://localhost:6006).
 test.describe("Tic Tac Toe MessageBox", () => {
   test("renders one list item per message", async ({ page }) => {
     await page.goto("/iframe.html?id=tic-tac-toe-messagebox--with-messages&viewMode=story");

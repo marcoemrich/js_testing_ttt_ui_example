@@ -3,13 +3,13 @@ import { expect, fn, userEvent, within } from "storybook/test";
 import { Button } from "./Button";
 import "./button.css";
 
-// Moderne CSF3-Demo. Zeigt Stories, Controls (args/argTypes) und einen
-// Interaction-Test via play() – passend zum Testing-Workshop.
+// Modern CSF3 demo. Shows stories, controls (args/argTypes) and an
+// interaction test via play() – fitting for the testing workshop.
 const meta = {
   title: "Demo/Button",
   component: Button,
   args: {
-    label: "Klick mich",
+    label: "Click me",
     onClick: fn(),
   },
   argTypes: {
@@ -23,19 +23,19 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
-  args: { primary: true, label: "Primär" },
+  args: { primary: true, label: "Primary" },
 };
 
 export const Secondary: Story = {
-  args: { primary: false, label: "Sekundär" },
+  args: { primary: false, label: "Secondary" },
 };
 
-// Interaction-Test: klickt den Button und prüft, dass onClick aufgerufen wird.
+// Interaction test: clicks the button and checks that onClick is called.
 export const ClickInteraction: Story = {
-  args: { label: "Test mich" },
+  args: { label: "Test me" },
   play: async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
-    const button = canvas.getByRole("button", { name: "Test mich" });
+    const button = canvas.getByRole("button", { name: "Test me" });
     await userEvent.click(button);
     await expect(args.onClick).toHaveBeenCalledOnce();
   },

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-// Läuft gegen die Storybook-iframe (baseURL: http://localhost:6006).
+// Runs against the Storybook iframe (baseURL: http://localhost:6006).
 test.describe("Tic Tac Toe Board", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/iframe.html?id=tic-tac-toe-board--clickable-board-test&viewMode=story");

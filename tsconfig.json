@@ -12,8 +12,8 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "allowImportingTsExtensions": true,
-    // Tests enthalten bewusst ungenutzte Imports/Parameter (Demo-Charakter),
-    // daher hier nicht aktiviert.
+    // Tests intentionally contain unused imports/parameters (demo character),
+    // so this is not enabled here.
     "noUnusedLocals": false,
     "noUnusedParameters": false
   },

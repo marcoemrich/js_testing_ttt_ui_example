@@ -1,7 +1,7 @@
 {
   "name": "ttt-example",
   "version": "1.0.0",
-  "description": "Tic Tac Toe – Showcase für JS-Testing mit Vitest, Storybook und Playwright",
+  "description": "Tic Tac Toe – showcase for JS testing with Vitest, Storybook and Playwright",
   "type": "module",
   "scripts": {
     "start": "vite",
