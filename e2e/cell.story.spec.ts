@@ -1,6 +1,5 @@
 import { test, expect } from "@playwright/test";
 
-// Migriert aus src/components/Cell.cy-spec.ts
 // Läuft gegen die Storybook-iframe (baseURL: http://localhost:6006).
 test.describe("Tic Tac Toe Cell", () => {
   test.beforeEach(async ({ page }) => {
